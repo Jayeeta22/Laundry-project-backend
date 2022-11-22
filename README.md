@@ -1,1 +1,0 @@
-# Laundry-project-backend
