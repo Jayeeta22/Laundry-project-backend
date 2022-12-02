@@ -22,6 +22,11 @@ const userRoutes = require("./routes/user")
 
 /* =================== MONGOOSE CONNECTION =======================*/
 mongoose.connect(process.env.DB_URL || 'mongodb+srv://jayeeta-laundry:laundryJS@cluster0.ibkjanm.mongodb.net/?retryWrites=true&w=majority')
+.then(()=>{
+    console.log("connection successful")
+}).catch((err)=>{
+    console.log(err)
+})
 
 /* ==================== AUTHORIZATION ============================*/
 app.use("/orders",(req,res,next)=>{
