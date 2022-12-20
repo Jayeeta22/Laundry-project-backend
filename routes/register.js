@@ -16,7 +16,7 @@ router.post("/register", body("name"), body("email"), body("phone"), body("passw
     console.log(req.body)
     const error = validationResult(req)
     if (!error.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() })
+        return res.status(400).json({ errors: error.array() })
     }
     const { name, email, phone, state, district, address, pincode, password } = req.body
     bcrypt.hash(password, 10, async function(err, hash) {

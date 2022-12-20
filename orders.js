@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const Order = require('../models/order');
 const router = express.Router()
 
-router.use(bodyParser());
+ router.use(bodyParser());
 
 /* ======================== FETCH ALL ORDERS ===========================*/
 router.get("/orders", async (req, res) => {
